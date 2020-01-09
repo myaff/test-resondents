@@ -1,0 +1,83 @@
+.layout--default {
+  @include min-size(map-get($containers, min), 100vh);
+  background: $color--white;
+  color: inherit;
+  @include center-block;
+  width: 100%;
+  max-width: map-get($containers, max);
+
+  @include flexy(flex-start, center, nowrap, column);
+
+  .layout {
+    &__panel {
+      @include fixed(top 0px left 0px);
+      @include size(180px, 100%);
+      z-index: 5;
+    }
+
+    &__main {
+      @include flexy(flex-start, center, nowrap, column);
+      padding-left: 180px;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    &__header {
+      width: 100%;
+      z-index: 11;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    &__breadcrumbs {
+      margin: -6px 0 24px;
+      padding: 0 60px;
+    }
+
+    &__page {
+      display: flex;
+      flex: 1 1 auto;
+      width: 100%;
+      opacity: 1;
+      padding-left: 60px;
+      padding-right: 60px;
+
+      .page {
+        box-shadow: 0 10px 20px rgba(#000, 0.1);
+        width: 100%;
+        min-height: 100%;
+        @include flexy(flex-start, stretch, nowrap, column);
+
+        &__heading {
+          padding: 24px 40px;
+          font-size: $font-size--base;
+          font-weight: bold;
+          color: $color--text-light;
+        }
+
+        &__content {
+          padding: 24px 40px;
+        }
+
+        &.page--with-tabs {
+          margin-top: 55px;
+        }
+
+        &__tab-panel {
+          margin-top: -55px;
+        }
+        &__tabs {
+          flex: 1 1 auto;
+        }
+        &__tab-item {
+          @include flexy(flex-start, stretch, nowrap, column);
+          min-height: 100%;
+        }
+        &__tab-content {
+          padding: 24px 40px;
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}

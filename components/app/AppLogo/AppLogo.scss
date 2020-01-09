@@ -1,0 +1,12 @@
+.app-logo {
+  text-align: center;
+
+  &__link {
+    display: block;
+  }
+
+  &__placeholder {
+    @include circle(48px);
+    background: $color--secondary;
+  }
+}

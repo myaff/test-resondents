@@ -1,0 +1,61 @@
+.base-select {
+  &__label {
+    display: block;
+    width: 100%;
+  }
+  &__label-text {
+    font: #{$font-size--base}/1 $font--base;
+    margin-bottom: 0.5em;
+    transform: translateZ(0);
+
+    .required-star {
+      color: $color--error;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font: #{$font-size--base}/1.5 $font--base;
+    border: 1px solid $color--medium-grey;
+    box-shadow: none;
+    background: $color--white;
+    cursor: pointer;
+
+    &.opened {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__selection {
+    padding: 0.75em 1em;
+    padding-right: 3em;
+
+    &-icon {
+      @include absolute(top 0 right 0);
+      @include size(1.5em, 100%);
+      @include flexy(center, center);
+      font-size: 2em;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__select.opened &__selection-icon {
+    transform: rotate(-180deg);
+  }
+
+  &__dropdown {
+    @include absolute(top 100% left -1px right -1px);
+    background: #fff;
+    z-index: $z-index--dropdown;
+    border: 1px solid $color--medium-grey;
+    border-radius: 0 0 6px 6px;
+  }
+
+  &__option {
+    padding: 0.5em 1em;
+    cursor: pointer;
+  }
+}

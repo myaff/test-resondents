@@ -1,0 +1,25 @@
+.mini-profile {
+  @include flexy(flex-start, center);
+
+  &__avatar {
+    @include circle(60px);
+    margin-right: 10px;
+  }
+
+  &__img {
+    display: block;
+    @include min-size(100%);
+    @include max-size(100%);
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: $font-size--medium;
+    font-weight: bold;
+  }
+
+  &__position {
+    font-size: $font-size--small;
+    color: $color--text-light;
+  }
+}

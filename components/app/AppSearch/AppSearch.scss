@@ -1,0 +1,9 @@
+.app-search {
+  width: 100%;
+  &__field input {
+    padding-right: 48px;
+  }
+  &__btn {
+    @include absolute(top 0 right 0);
+  }
+}

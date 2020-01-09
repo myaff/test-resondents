@@ -1,0 +1,129 @@
+.base-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  min-width: 125px;
+  font: #{$font-size--base}/1 $font--base;
+  text-align: center;
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &__icon {
+    font-size: 1.25em;
+    vertical-align: middle;
+    margin: -0.125em 0;
+
+    &.icon--before {
+      order: -1;
+
+      & + .base-button__text {
+        margin-left: 0.5em;
+      }
+    }
+    &.icon--after {
+      order: 1;
+
+      & + .base-button__text {
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  &__text {
+    order: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  // themes
+  &.theme--primary {
+    background: $color--primary;
+    color: #fff;
+
+    &:hover,
+    &:active {
+      background: darken($color--primary, 5%);
+    }
+  }
+  &.theme--primary-outline {
+    background: transparent;
+    color: $color--primary;
+    border-color: currentColor;
+
+    &:hover,
+    &:active {
+      border-color: darken($color--primary, 5%);
+    }
+  }
+  &.theme--secondary {
+    background: $color--secondary;
+    color: $color--white;
+
+    &:hover,
+    &:active {
+      background: darken($color--secondary, 5%);
+    }
+  }
+  &.theme--secondary-outline {
+    background: transparent;
+    color: $color--secondary;
+    border-color: currentColor;
+
+    &:hover,
+    &:active {
+      border-color: darken($color--secondary, 5%);
+    }
+  }
+  &.theme--light {
+    background: $color--white;
+    color: $color--primary;
+    box-shadow: 0 0 5px rgba(#000, 0.1);
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0 10px rgba(#000, 0.15);
+    }
+  }
+  &.theme--plain {
+    background: transparent;
+    color: $color--text-light;
+  }
+
+  // shape
+  &.shape--square {
+    font-size: 24px;
+    @include size(2em);
+    padding: 0.5em;
+    min-width: unset;
+  }
+  &.shape--circle {
+    font-size: 24px;
+    @include circle(2em);
+    padding: 0.5em;
+    min-width: unset;
+  }
+
+  // sizes
+  &.size--big {
+    font-size: 20px;
+  }
+  &.shape--square.size--big,
+  &.shape--circle.size--big {
+    font-size: 30px;
+  }
+}

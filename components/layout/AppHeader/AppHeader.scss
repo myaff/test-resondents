@@ -1,0 +1,21 @@
+.app-header {
+  @include flexy(space-between, center);
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__left {
+    @include flexy(flex-start, center);
+    flex: 1 1 auto;
+    max-width: 620px;
+    margin-right: 20px;
+  }
+  &__right {
+    @include flexy(flex-end, center);
+    flex: 0 0 auto;
+    margin-left: 20px;
+  }
+  &__center {
+    @include flexy(center, center);
+    flex: 0 0 auto;
+  }
+}

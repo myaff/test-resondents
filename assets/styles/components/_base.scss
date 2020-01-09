@@ -1,0 +1,36 @@
+html, body, div, header, footer, section, article {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html, body {
+  font: #{$font-size--base} / #{$line-height--base} $font--base;
+  color: $color--base;
+  background: $body-bg;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.l-container {
+  @include center-block;
+  width: 100%;
+  max-width: 87.5rem;
+  padding: 0 2.5rem;
+}
+
+
+.hidden {
+  display: none!important;
+}
+.invisible {
+  visibility: hidden;
+}

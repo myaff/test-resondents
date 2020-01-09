@@ -1,0 +1,26 @@
+.base-input {
+  &__label {
+    @include flexy(flex-start, baseline);
+  }
+  &__label-text {
+    font: #{$font-size--base}/1 $font--base;
+    margin-right: 0.5em;
+    transform: translateZ(0);
+
+    .required-star {
+      color: $color--error;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font: #{$font-size--base}/1.5 $font--base;
+    padding: 0.75em 1em;
+    border: 1px solid $color--medium-grey;
+    box-shadow: none;
+    background: $color--white;
+  }
+}

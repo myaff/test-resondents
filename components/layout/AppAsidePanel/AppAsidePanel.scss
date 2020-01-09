@@ -1,0 +1,17 @@
+.app-aside-panel {
+  @include flexy(flex-start, stretch, nowrap, column);
+  background: $color--white;
+  border-right: 2px solid $color--border-light;
+  padding: 30px 10px;
+
+  &__top {
+    margin: 0 auto 74px;
+  }
+  &__main {
+    margin: 0 auto auto;
+    width: 100%;
+  }
+  &__bottom {
+    margin: auto auto 0;
+  }
+}
