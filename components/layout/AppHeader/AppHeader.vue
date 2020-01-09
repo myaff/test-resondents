@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       currentUser: {
-        image: "../images/ava.jpg",
+        image: "/images/ava.jpg",
         name: "Александр Соколов",
         position: "Администратор"
       }

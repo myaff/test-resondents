@@ -31,7 +31,7 @@ module.exports = {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "./assets/favicon.ico"
+        href: "/favicon.ico"
       }
     ],
     script: []
